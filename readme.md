@@ -19,7 +19,7 @@ npm install
 
 ## Before you run the extension
 
-The event codes are hard-coded. Change them in the code before running.
+The event codes are hard-coded. Change them in the app.js before running. See [linux event codes](https://github.com/torvalds/linux/blob/master/include/uapi/linux/input-event-codes.h).
 
 
 ## How to run
