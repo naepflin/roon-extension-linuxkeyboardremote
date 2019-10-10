@@ -17,6 +17,11 @@ cd roon-extension-linux-keyboard
 npm install
 ```
 
+## Before you run the extension
+
+The event codes are hard-coded. Change them in the code before running.
+
+
 ## How to run
 
 Run in console:
@@ -27,9 +32,9 @@ Run in the background:
 
 `nohup bash node-recovery.sh >/dev/null 2>&1 &`
 
-Open Roon and enable the extension. Then, pick the zone and device path (e.g. "/dev/input/event0") in the extension settings.
+## Configuration
 
-Note that the event codes are hard-coded, so change them in the code before running.
+Open Roon and enable the extension. Then, pick the zone and device path (e.g. "/dev/input/event0") in the extension settings.
 
 ## License
 
