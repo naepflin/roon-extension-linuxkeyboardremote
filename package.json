@@ -1,0 +1,14 @@
+{
+  "name": "roon-extension-linuxkeyboardremote",
+  "version": "1.0.0",
+  "description": "Roon Linux Keyboard Remote",
+  "main": "app.js",
+  "author": "Ivo Naepflin",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "input-event": "^1.2.6",
+    "node-roon-api": "github:roonlabs/node-roon-api",
+    "node-roon-api-settings": "github:roonlabs/node-roon-api-settings",
+    "node-roon-api-transport": "github:roonlabs/node-roon-api-transport"
+  }
+}
