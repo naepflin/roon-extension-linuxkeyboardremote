@@ -1,19 +1,22 @@
 "use strict";
 
-const RoonApi = require("node-roon-api");
-const RoonApiTransport = require("node-roon-api-transport");
-const RoonApiSettings  = require("node-roon-api-settings");
-const InputEvent = require('input-event');
+const RoonApi = require("node-roon-api"),
+  RoonApiTransport = require("node-roon-api-transport"),
+  RoonApiSettings  = require("node-roon-api-settings"),
+  InputEvent = require('input-event'),
+  os = require("os");
 
 var core;
 
 const roon = new RoonApi({
-  extension_id:        'com.naepflin.roon-linuxkeyboardremote',
-  display_name:        "Linux Keyboard Remote",
-  display_version:     "1.0.0",
-  publisher:           'Ivo Näpflin',
-  email:               'git@naepflin.com',
-  website:             'https://github.com/naepflin/roon-extension-linuxkeyboardremote',
+  extension_id:        os.hostname().split('.')[0],
+  display_name:        'Roon Bridge Remote: ' + os.hostname().split('.')[0],
+  display_version:     '1.0.0',
+  publisher:           'Dan Ward',
+  email:               '',
+  website:             'https://github.com/danward79/roon-extension-linuxkeyboardremote',
+  log_level:           'none',
+  
   core_paired: function(core_) {
     core = core_;
 
@@ -101,13 +104,16 @@ function makelayout(settings) {
 function keyboardEvent(e) {
   console.log("Key press registered: " + e.code);
   if (!core) return;
-  if(e.code == 28) core.services.RoonApiTransport.control(mysettings.zone, 'playpause');
-  if(e.code == 106) core.services.RoonApiTransport.control(mysettings.zone, 'next');
-  if(e.code == 105) core.services.RoonApiTransport.control(mysettings.zone, 'previous');
-  if(e.code == 115) core.services.RoonApiTransport.change_volume(mysettings.zone, 'relative', 1);
-  if(e.code == 103) core.services.RoonApiTransport.change_volume(mysettings.zone, 'relative', 1);
-  if(e.code == 114) core.services.RoonApiTransport.change_volume(mysettings.zone, 'relative', -1);
-  if(e.code == 108) core.services.RoonApiTransport.change_volume(mysettings.zone, 'relative', -1);
-  if(e.code == 172) core.services.RoonApiTransport.convenience_switch(mysettings.zone, {});
-  if(e.code == 116) core.services.RoonApiTransport.convenience_switch(mysettings.zone, {});
+  if(e.code == 207) core.services.RoonApiTransport.control(mysettings.zone, 'play');
+  if(e.code == 119) core.services.RoonApiTransport.control(mysettings.zone, 'pause');
+  // if(e.code == 119) core.services.RoonApiTransport.control(mysettings.zone, 'playpause');
+  if(e.code == 128) core.services.RoonApiTransport.control(mysettings.zone, 'stop');
+  if(e.code == 407) core.services.RoonApiTransport.control(mysettings.zone, 'next');
+  if(e.code == 412) core.services.RoonApiTransport.control(mysettings.zone, 'previous');
+  // if(e.code == 115) core.services.RoonApiTransport.change_volume(mysettings.zone, 'relative', 1);
+  // if(e.code == 103) core.services.RoonApiTransport.change_volume(mysettings.zone, 'relative', 1);
+  // if(e.code == 114) core.services.RoonApiTransport.change_volume(mysettings.zone, 'relative', -1);
+  // if(e.code == 108) core.services.RoonApiTransport.change_volume(mysettings.zone, 'relative', -1);
+  // if(e.code == 172) core.services.RoonApiTransport.convenience_switch(mysettings.zone, {});
+  // if(e.code == 116) core.services.RoonApiTransport.convenience_switch(mysettings.zone, {});
 }

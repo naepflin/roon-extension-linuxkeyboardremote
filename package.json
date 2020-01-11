@@ -1,9 +1,9 @@
 {
-  "name": "roon-extension-linuxkeyboardremote",
+  "name": "roon-extension-Roon-Bridge-Remote",
   "version": "1.0.0",
-  "description": "Roon Linux Keyboard Remote",
+  "description": "Roon Bridge Remote",
   "main": "app.js",
-  "author": "Ivo Naepflin",
+  "author": "Dan Ward",
   "license": "Apache-2.0",
   "dependencies": {
     "input-event": "^1.2.6",
