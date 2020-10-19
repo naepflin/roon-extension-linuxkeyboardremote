@@ -12,7 +12,7 @@ Program your Linux keyboard to act as a Roon remote. It supports play / pause, v
 ## Installation
 
 ```
-git clone https://github.com/naepflin/roon-extension-linux-keyboard.git
+git clone https://github.com/naepflin/roon-extension-linuxkeyboardremote.git
 cd roon-extension-linux-keyboard
 npm install
 ```
