@@ -4,6 +4,7 @@ const RoonApi = require("node-roon-api");
 const RoonApiTransport = require("node-roon-api-transport");
 const RoonApiSettings = require("node-roon-api-settings");
 const InputEvent = require('input-event');
+const fs = require('fs');
 
 var core;
 
@@ -89,9 +90,19 @@ function makelayout(settings) {
     setting: "zone",
   });
 
+  var devicePaths = [];
+  let inputPath = "/dev/input/by-id/";
+  fs.readdirSync(inputPath).forEach(devicePath => {
+    console.log(devicePath);
+    devicePaths.push({
+      value: inputPath + devicePath,
+      title: devicePath
+    });
+  });
   l.layout.push({
-    type:    "string",
-    title:   "Keyboard Device Path",
+    type: "dropdown",
+    title: "Keyboard Device Path",
+    values: devicePaths,
     setting: "devicePath",
   });
 
