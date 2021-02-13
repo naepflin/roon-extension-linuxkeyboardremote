@@ -93,7 +93,6 @@ function makelayout(settings) {
   var devicePaths = [];
   let inputPath = "/dev/input/by-id/";
   fs.readdirSync(inputPath).forEach(devicePath => {
-    console.log(devicePath);
     devicePaths.push({
       value: inputPath + devicePath,
       title: devicePath
