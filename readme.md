@@ -24,22 +24,32 @@ The event codes are hard-coded. Change them in the app.js before running. See [l
 
 ## How to run
 
-Run in console:
+### Run in console:
+
+`node .`
+
+### Run in console with recovery after crash:
 
 `bash node-recovery.sh`
 
-Run in the background:
+### Run in the background:
 
 `nohup bash node-recovery.sh >/dev/null 2>&1 &`
 
-Run as a systemd service:
+### Run as a systemd service:
 
 `bash run-daemon.sh`
+
+### Run a second instance of the systemd service on the same host:
+
+1. Install the extension again in a separate location
+2. Change `servicename` in run-daemon.sh to a unique value 
+3. Run as described above
 
 
 ## Configuration
 
-Open Roon and enable the extension. Then, pick the zone and device path (e.g. "/dev/input/event0") in the extension settings.
+Open Roon and enable the extension. Then, pick the zone and keyboard device in the extension settings.
 
 ## License
 

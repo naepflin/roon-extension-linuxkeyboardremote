@@ -101,7 +101,7 @@ function makelayout(settings) {
   });
   l.layout.push({
     type: "dropdown",
-    title: "Keyboard Device Path",
+    title: "Keyboard Device",
     values: devicePaths,
     setting: "devicePath",
   });
