@@ -32,6 +32,11 @@ Run in the background:
 
 `nohup bash node-recovery.sh >/dev/null 2>&1 &`
 
+Run as a systemd service:
+
+`bash run-daemon.sh`
+
+
 ## Configuration
 
 Open Roon and enable the extension. Then, pick the zone and device path (e.g. "/dev/input/event0") in the extension settings.

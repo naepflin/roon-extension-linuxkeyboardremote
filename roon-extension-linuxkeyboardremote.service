@@ -1,0 +1,14 @@
+[Unit]
+Description=Roon Extension Linux Keyboard Remote
+Documentation=https://github.com/naepflin/roon-extension-linuxkeyboardremote
+After=network.target
+
+[Service]
+Type=simple
+User=root
+ExecStart=node .
+WorkingDirectory={{WorkingDirectory}}
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
